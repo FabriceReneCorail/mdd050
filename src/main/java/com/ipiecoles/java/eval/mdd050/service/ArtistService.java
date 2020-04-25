@@ -70,4 +70,11 @@ public class ArtistService {
         Pageable pageable = PageRequest.of(page,size,sort);
         return artistRepository.findByNameContainingIgnoreCase(name, pageable);
     }
+
+
+
+	public ResponseEntity<String> save(Long id) {
+		// TODO Auto-generated method stub
+		return null;
+	}
 }

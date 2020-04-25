@@ -1,5 +1,6 @@
 package controller;
 
+import org.hibernate.annotations.UpdateTimestamp;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.repository.CrudRepository;
@@ -8,6 +9,7 @@ import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
@@ -50,6 +52,15 @@ public class artistController {
 		 Artist artiste = ((CrudRepository<Artist, Long>) artisteService).save(artist);
 		 return ResponseEntity.ok(artiste);
 }
+
+@PutMapping("{id}")
+public ResponseEntity<String> updateArtiste(@PathVariable("id") Long id) {
+		
+return artisteService.save(id);
+
+}
+
+
 @DeleteMapping("{id}")
 public ResponseEntity<String> deleteArtist(@PathVariable("id") Long id) {
 	

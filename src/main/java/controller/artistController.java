@@ -46,11 +46,9 @@ public class artistController {
 
 @PostMapping("")
 	public ResponseEntity<Artist> creerArtiste(@RequestBody Artist artist) {
-	if (artist == null) {
-		 return ResponseEntity.badRequest().build();
-		 }
-		 Artist artiste = ((CrudRepository<Artist, Long>) artisteService).save(artist);
-		 return ResponseEntity.ok(artiste);
+	
+		 artist = artisteService.save(artist);
+		 return ResponseEntity.ok(artist);
 }
 
 @PutMapping("{id}")

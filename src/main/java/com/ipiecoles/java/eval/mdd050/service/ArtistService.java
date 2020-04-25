@@ -73,7 +73,7 @@ public class ArtistService {
 
 
 
-	public ResponseEntity<String> save(Long id) {
+	public Artist save(Artist artist) {
 		// TODO Auto-generated method stub
 		return null;
 	}

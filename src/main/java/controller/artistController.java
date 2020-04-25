@@ -52,7 +52,7 @@ public class artistController {
 }
 
 @PutMapping("{id}")
-public ResponseEntity<String> updateArtiste(@PathVariable("id") Long id) {
+public Artist updateArtiste(@PathVariable("id") Artist id) {
 		
 return artisteService.save(id);
 

@@ -19,4 +19,11 @@ public class AlbumService {
     public void deleteAlbum(Long id) {
         albumRepository.deleteById(id);
     }
+
+	public Album save(Album album) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	
 }
